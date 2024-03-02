@@ -16,6 +16,12 @@ typedef struct matrix_struct {
 #define SUCCESS 1
 #define FAILURE 0
 
+// Helpers
+int is_null(matrix_t *A);
+int invalid_size(int rows, int columns);
+int equal_sizes(matrix_t *A, matrix_t *B);
+int check_multiplication(matrix_t *A, matrix_t *B);
+void print_matrix(matrix_t *A);
 
 // Functions to do
 int s21_create_matrix(int rows, int columns, matrix_t *result);
@@ -40,14 +46,10 @@ int s21_determinant(matrix_t *A, double *result);
 
 int s21_inverse_matrix(matrix_t *A, matrix_t *result);
 
+void s21_initialize_matrix(matrix_t *A, double start_value,
+                           double iteration_step);
 
 
-// Helpers
-int is_null(matrix_t *A);
-int invalid_size(int rows, int columns);
-int equal_sizes(matrix_t *A, matrix_t *B);
-int check_multiplication(matrix_t *A, matrix_t *B);
-void print_matrix(matrix_t *A);
 #endif
 
 
